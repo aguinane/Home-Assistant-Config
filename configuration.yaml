@@ -6,8 +6,6 @@ homeassistant:
   unit_system: metric
   time_zone: Australia/Brisbane
 
-# Show links to resources in log and frontend
-introduction:
 
 # Enables the frontend
 frontend:
@@ -16,19 +14,12 @@ frontend:
 config:
 
 http:
-  # Uncomment this to add a password (recommended!)
-  # api_password: PASSWORD
+  api_password: !secret http_password
   # Uncomment this if you are using SSL or running in Docker etc
   # base_url: example.duckdns.org:8123
 
 # Checks for available updates
-# Note: This component will send some information about your system to
-# the developers to assist with development of Home Assistant.
-# For more information, please see:
-# https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
 updater:
-  # Optional, allows Home Assistant developers to focus on popular components.
-  # include_used_components: true
 
 # Discover some devices automatically
 discovery:
@@ -45,13 +36,43 @@ logbook:
 # Track the sun
 sun:
 
-# Weather Prediction
-sensor:
-  platform: yr
-
 # Text to speech
 tts:
   platform: google
 
 group: !include groups.yaml
 automation: !include automations.yaml
+
+#################################################################
+## Sensors
+#################################################################
+
+# Weather Prediction
+sensor:
+  platform: yr
+
+
+#################################################################
+## Zones
+#################################################################
+
+zone:
+  name: Home
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  radius: 50
+  icon: mdi:home
+
+zone 2:
+  name: Ergon
+  latitude: -27.573183
+  longitude: 151.920584
+  radius: 100
+  icon: mdi:briefcase
+
+zone 3:
+  name: Hospital
+  latitude: -27.570010
+  longitude: 151.945301
+  radius: 150
+  icon: mdi:hospital
