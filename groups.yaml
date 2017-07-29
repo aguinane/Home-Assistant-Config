@@ -1,0 +1,29 @@
+living_room: 
+  name: Living Room
+  view: yes
+  entities:
+    - group.devices
+    - media_player.plex
+
+devices: 
+  name: Devices
+  entities:
+    - media_player.living_room_tv
+    - media_player.guinanecast
+    - media_player.denon_avrx1000
+
+weather: 
+  name: Weather
+  entities:
+    - sun.sun
+    - sensor.bom_toowoomba_air_temp_c
+    - sensor.bom_toowoomba_feels_like_c
+    - sensor.bom_toowoomba_wind_speed_kmh
+
+internet: 
+  name: Internet
+  entities:
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+
+

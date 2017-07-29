@@ -40,39 +40,85 @@ sun:
 tts:
   platform: google
 
-group: !include groups.yaml
-automation: !include automations.yaml
+
+#################################################################
+## Cameras
+#################################################################
+
+camera:
+  - platform: rpi_camera
 
 #################################################################
 ## Sensors
 #################################################################
 
-# Weather Prediction
-sensor:
-  platform: yr
+sensor bomweather:
+  - platform: bom
+    station: IDQ60901.95551
+    name: Toowoomba
+    monitored_conditions:
+      - apparent_t
+      - cloud
+      - air_temp
+      - dewpt
+      - rain_trace
+      - rel_hum
+      - vis_km
+      - wind_spd_kmh
 
+
+sensor netspeed:
+  platform: speedtest
+  minute:
+    - 0
+    - 30
+  monitored_conditions:
+    - download
+    - upload
+
+#################################################################
+## Media Players
+#################################################################
+
+media_player tv:
+  platform: lg_netcast
+  host: 10.0.0.113
+  access_token: 712781
+  name: Living Room TV
+
+media_player denon:
+  platform: denonavr
+
+media_player cast:
+  platform: cast
+
+media_player plex:
+  platform: plex
 
 #################################################################
 ## Zones
 #################################################################
 
-zone:
+zone home:
   name: Home
   latitude: !secret home_latitude
   longitude: !secret home_longitude
   radius: 50
   icon: mdi:home
 
-zone 2:
+zone ergon:
   name: Ergon
   latitude: -27.573183
   longitude: 151.920584
   radius: 100
   icon: mdi:briefcase
 
-zone 3:
+zone hospital:
   name: Hospital
   latitude: -27.570010
   longitude: 151.945301
   radius: 150
   icon: mdi:hospital
+
+group: !include groups.yaml
+automation: !include automations.yaml
