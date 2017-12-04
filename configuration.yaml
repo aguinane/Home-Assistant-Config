@@ -29,6 +29,9 @@ conversation:
 
 # Enables support for tracking state changes over time.
 history:
+recorder:
+  purge_interval: 2
+  purge_keep_days: 10
 
 # View all events in a logbook
 logbook:
