@@ -111,15 +111,15 @@ zone home:
 
 zone ergon:
   name: Ergon
-  latitude: -27.573183
-  longitude: 151.920584
+  latitude: !secret work_latitude
+  longitude: !secret work_longitude
   radius: 100
   icon: mdi:briefcase
 
 zone hospital:
   name: Hospital
-  latitude: -27.570010
-  longitude: 151.945301
+  latitude: !secret hospital_latitude
+  longitude: !secret hospital_longitude
   radius: 150
   icon: mdi:hospital
 
