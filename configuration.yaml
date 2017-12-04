@@ -92,12 +92,25 @@ sensor netspeed:
     - upload
 
 #################################################################
+## Switches
+#################################################################
+
+switch:
+  - platform: broadlink
+    host: 10.0.0.111
+    mac: '34:EA:34:8E:FA:55'
+    switches:    
+        tv_lg:
+          friendly_name: "LG Tv Power"
+          command_on: 'JgBYAAABIJISExETETcSEhISEhQQFBETETcROBESEjcRNhM1EjcTNRMTERISNxEUERMSExE2EjYSNhM2EhIROBE3ETcREhITEgAFGwABH0oSAAwzAAEfShEADQU='    
+        
+#################################################################
 ## Media Players
 #################################################################
 
 media_player tv:
   platform: lg_netcast
-  host: 10.0.0.113
+  host: 10.0.0.121
   access_token: 712781
   name: Living Room TV
 
