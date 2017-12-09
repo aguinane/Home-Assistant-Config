@@ -20,6 +20,7 @@ http:
 
 # Checks for available updates
 updater:
+  reporting: no
 
 # Discover some devices automatically
 discovery:
@@ -55,41 +56,6 @@ device_tracker router:
     username: !secret router_user
     password: !secret router_pass
 
-  
-#################################################################
-## Cameras
-#################################################################
-
-camera:
-  - platform: rpi_camera
-
-#################################################################
-## Sensors
-#################################################################
-
-sensor bomweather:
-  - platform: bom
-    station: IDQ60901.95551
-    name: Toowoomba
-    monitored_conditions:
-      - apparent_t
-      - cloud
-      - air_temp
-      - dewpt
-      - rain_trace
-      - rel_hum
-      - vis_km
-      - wind_spd_kmh
-
-
-sensor netspeed:
-  platform: speedtest
-  minute:
-    - 0
-    - 30
-  monitored_conditions:
-    - download
-    - upload
 
 #################################################################
 ## Switches
@@ -104,49 +70,9 @@ switch:
           friendly_name: "LG Tv Power"
           command_on: 'JgBYAAABIJISExETETcSEhISEhQQFBETETcROBESEjcRNhM1EjcTNRMTERISNxEUERMSExE2EjYSNhM2EhIROBE3ETcREhITEgAFGwABH0oSAAwzAAEfShEADQU='    
         
-#################################################################
-## Media Players
-#################################################################
-
-media_player tv:
-  platform: lg_netcast
-  host: 10.0.0.121
-  access_token: 712781
-  name: Living Room TV
-
-media_player denon:
-  platform: denonavr
-
-media_player cast:
-  platform: cast
-
-media_player plex:
-  platform: plex
-
-#################################################################
-## Zones
-#################################################################
-
-zone home:
-  name: Home
-  latitude: !secret home_latitude
-  longitude: !secret home_longitude
-  radius: 50
-  icon: mdi:home
-
-zone ergon:
-  name: Ergon
-  latitude: !secret work_latitude
-  longitude: !secret work_longitude
-  radius: 100
-  icon: mdi:briefcase
-
-zone hospital:
-  name: Hospital
-  latitude: !secret hospital_latitude
-  longitude: !secret hospital_longitude
-  radius: 150
-  icon: mdi:hospital
-
+sensor: !include sensor.yaml
+media_player: !include media_player.yaml
+zone: !include zones.yaml
+camera: !include camera.yaml
 group: !include groups.yaml
 automation: !include automations.yaml
