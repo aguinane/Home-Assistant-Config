@@ -1,9 +1,2 @@
   - platform: rpi_camera
     name: PI3
-
-  - platform: generic
-    name: PI1
-    still_image_url: http://10.0.0.124/picture/1/current/
-    username: user
-    password: user
-

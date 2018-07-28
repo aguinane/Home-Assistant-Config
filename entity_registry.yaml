@@ -1,0 +1,5 @@
+media_player.guinanecast:
+  config_entry_id:
+  name:
+  platform: cast
+  unique_id: d84ee44e-c34d-c6a8-d0ef-0fd87143ffcb
