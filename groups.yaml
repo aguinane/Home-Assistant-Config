@@ -1,22 +1,8 @@
-living_room: 
-  name: Living Room
-  view: yes
-  entities:
-    - group.devices
-    - media_player.plex
-
 people:
   name: People
   entities:
     - device_tracker.alexphone
     - device_tracker.rachaelphone
-
-devices: 
-  name: Media Players
-  entities:
-    - media_player.living_room_tv
-    - media_player.guinanecast
-    - media_player.denon_avrx1000
 
 weather: 
   name: Weather
