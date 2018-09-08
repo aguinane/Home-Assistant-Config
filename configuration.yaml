@@ -30,6 +30,7 @@ updater:
 
 # Discover some devices automatically
 discovery:
+ios:
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
