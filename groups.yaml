@@ -15,10 +15,3 @@ weather:
     - sensor.bom_toowoomba_visability_km
     - sensor.bom_toowoomba_relative_humidity
 
-internet: 
-  name: Internet
-  entities:
-    - sensor.speedtest_download
-    - sensor.speedtest_upload
-
-
