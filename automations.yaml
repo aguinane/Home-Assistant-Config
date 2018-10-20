@@ -1,1 +1,16 @@
-[]
+- id: '1538793980800'
+  alias: Run Vacuum
+  trigger:
+  - at: 06:45
+    platform: time
+  - at: '17:00'
+    platform: time
+  condition:
+  - condition: zone
+    entity_id: device_tracker.alex_iphone
+    zone: zone.home
+  - condition: state
+    entity_id: media_player.living_room_tv
+    state: 'off'
+  action:
+  - service: vacuum.start
