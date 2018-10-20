@@ -50,6 +50,11 @@ logbook:
 # Track the sun
 sun:
 
+weather:
+  - platform: bom
+    name: Toowoomba
+    station: IDQ60901.95551
+    
 # Text to speech
 tts:
   platform: google

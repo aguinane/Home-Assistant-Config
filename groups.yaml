@@ -3,15 +3,3 @@ people:
   entities:
     - device_tracker.alexphone
     - device_tracker.rachaelphone
-
-weather: 
-  name: Weather
-  entities:
-    - sun.sun
-    - sensor.bom_toowoomba_air_temp_c
-    - sensor.bom_toowoomba_feels_like_c
-    - sensor.bom_toowoomba_wind_speed_kmh
-    - sensor.bom_toowoomba_rain_today
-    - sensor.bom_toowoomba_visability_km
-    - sensor.bom_toowoomba_relative_humidity
-

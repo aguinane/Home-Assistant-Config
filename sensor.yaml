@@ -2,13 +2,3 @@
 ## Sensors
 #################################################################
 
-  - platform: bom
-    name: Toowoomba
-    station: IDQ60901.95551
-    monitored_conditions:
-      - apparent_t
-      - air_temp
-      - rain_trace
-      - rel_hum
-      - vis_km
-      - wind_spd_kmh
