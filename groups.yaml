@@ -1,5 +1,0 @@
-people:
-  name: People
-  entities:
-    - device_tracker.alexphone
-    - device_tracker.rachaelphone
