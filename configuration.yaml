@@ -18,9 +18,10 @@ http:
 
 # Discover some devices automatically
 #discovery:
+config:
+system_health:
 ios:
-
-# Show the map
+hassio:
 map:
 
 # Enables support for tracking state changes over time.
