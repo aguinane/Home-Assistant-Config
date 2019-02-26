@@ -1,9 +1,11 @@
 - id: '1538793980800'
   alias: Run Vacuum
   trigger:
-  - at: 06:45
+  - at: '06:25'
     platform: time
-  - at: '17:00'
+  - at: '12:30'
+    platform: time
+  - at: '17:15'
     platform: time
   condition:
   - condition: zone
