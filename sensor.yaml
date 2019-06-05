@@ -2,3 +2,7 @@
 ## Sensors
 #################################################################
 
+  - platform: bom
+    station: IDQ60901.95551
+    monitored_conditions:
+      - apparent_t

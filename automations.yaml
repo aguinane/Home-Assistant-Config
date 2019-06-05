@@ -1,7 +1,7 @@
 - id: '1538793980800'
   alias: Run Vacuum
   trigger:
-  - at: 06:25
+  - at: '06:25'
     platform: time
   - at: '12:30'
     platform: time
@@ -19,12 +19,15 @@
 - id: '1559732747300'
   alias: Cold Morning AC
   trigger:
-  - at: 05:30
+  - at: '05:30'
     platform: time
   condition:
   - condition: zone
     entity_id: device_tracker.alex_iphone
     zone: zone.home
+  - below: '7'
+    condition: numeric_state
+    entity_id: sensor.bom_feels_like_c
   action:
   - data:
       host: 10.0.0.111
