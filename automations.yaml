@@ -1,7 +1,7 @@
 - id: '1538793980800'
   alias: Run Vacuum
   trigger:
-  - at: '06:25'
+  - at: 06:25
     platform: time
   - at: '12:30'
     platform: time
@@ -16,3 +16,18 @@
     state: 'off'
   action:
   - service: vacuum.start
+- id: '1559732747300'
+  alias: Cold Morning AC
+  trigger:
+  - at: 05:30
+    platform: time
+  condition:
+  - condition: zone
+    entity_id: device_tracker.alex_iphone
+    zone: zone.home
+  action:
+  - data:
+      host: 10.0.0.111
+      packet:
+      - JgAkAQABJ5MWEhUTFBMVNxQUFBMVExUSFDgUFBMUFDgUExUTFRIVExQTFRMVExQTFBQUNxUTFBQTFBUTFBMVExU2FRMUOBQTFBQUNxQUFQACkBQTFBQUExQUFBQTFBQUFBMVExUSFRMVEhUTFRMUExQUFBMVExUSFRMVEhUTFRMUExQUFBMVExQTFDgVNxQTFDgUAAUhAAEmlBQTFBQUExU3FRIVExUTFBMUOBQTFRMVNxQTFBQUExUTFRIUFBQTFRMUFBQ3FRMUExUTFBMUFBQUFDcVNxQ4FBMVExQ3FBQUAAKRFBMVExQTFRMVEhQUFBQUExQUFBMVExQTFBQUExUTFRMUExQUFBMUFBUSFRMVEhUTFRMUExQUFBMUOBQ4FBMVNxUADQUAAAAA
+    service: broadlink.send
