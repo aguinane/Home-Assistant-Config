@@ -5,23 +5,14 @@ homeassistant:
   elevation: !secret home_elevation
   unit_system: metric
   time_zone: Australia/Brisbane
-  auth_providers:
-   - type: homeassistant
-   - type: trusted_networks
 
-http:
-  trusted_networks:
-    - 127.0.0.1
-    - ::1
-    - 10.0.0.0/24
-    - fd00::/8
 
 # Discover some devices automatically
 #discovery:
 config:
 system_health:
 ios:
-hassio:
+#hassio:
 map:
 
 # Enables support for tracking state changes over time.
@@ -40,11 +31,6 @@ weather:
   - platform: bom
     name: Toowoomba
     station: IDQ60901.95551
-    
-# Text to speech
-tts:
-  platform: google
-
 
 #################################################################
 ## Tracking
