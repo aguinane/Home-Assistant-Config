@@ -12,7 +12,7 @@ homeassistant:
 config:
 system_health:
 ios:
-#hassio:
+hassio:
 map:
 
 # Enables support for tracking state changes over time.
