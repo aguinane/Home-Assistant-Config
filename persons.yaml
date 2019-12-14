@@ -1,0 +1,9 @@
+  - name: Alex
+    id: alex
+    device_trackers:
+      - device_tracker.alex_iphone
+      - device_tracker.iphone
+  - name: Rachael
+    id: rachael
+    device_trackers:
+      - device_tracker.rachael_nexus

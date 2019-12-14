@@ -6,26 +6,42 @@ homeassistant:
   unit_system: metric
   time_zone: Australia/Brisbane
 
+http:
+  base_url: !secret base_url
 
-# Discover some devices automatically
-#discovery:
+# Default Config Items
+automation: !include automations.yaml
+#cloud:
 config:
-system_health:
-ios:
-hassio:
+frontend:
+history: 
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - updater
+logbook:
 map:
+mobile_app:
+person: !include persons.yaml
+script:
+ssdp:
+sun:
+system_health:
+#updater:
+zeroconf:
 
-# Enables support for tracking state changes over time.
-history:
+# Hassio / App Configs
+hassio:
+ios:
+
+# More Config Items
 recorder:
   purge_interval: 1
   purge_keep_days: 7
 
-# View all events in a logbook
-logbook:
 
-# Track the sun
-sun:
+
 
 weather:
   - platform: bom
@@ -79,4 +95,3 @@ sensor: !include sensor.yaml
 media_player: !include media_player.yaml
 zone: !include zones.yaml
 camera: !include camera.yaml
-automation: !include automations.yaml
