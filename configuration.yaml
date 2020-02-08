@@ -41,12 +41,13 @@ recorder:
   purge_keep_days: 7
 
 
-
-
 weather:
-  - platform: bom
-    name: Toowoomba
-    station: IDQ60901.95551
+#  - platform: bom
+#    name: Toowoomba
+#    station: IDQ60901.95551
+
+  - platform: openweathermap
+    api_key: !secret openweatherapi
 
 #################################################################
 ## Tracking
