@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - run: mv secrets_travis.yaml secrets.yaml
+      - run: mv secrets_test.yaml secrets.yaml
       - uses: kpucynski/action-ha-config-check@master
         with:
           ha_version: "latest"
