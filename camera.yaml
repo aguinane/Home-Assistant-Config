@@ -1,10 +1,12 @@
-  - platform: uvc
-    nvr: 10.0.0.126
-    port: 7443
-    key: !secret uvc_key
-    password: !secret uvc_password
-    ssl: false
+  - platform: ffmpeg
+    name: Back Yard
+    input: rtsp://10.0.0.126:7447/5cfe0f35e4b097c31938970c_2
 
-  - platform: bom
-    location: Marburg
-    
+  - platform: ffmpeg
+    name: Driveway
+    input: rtsp://10.0.0.126:7447/5cfe0f35e4b097c31938970d_2
+
+  - platform: ffmpeg
+    name: Front Door
+    input: rtsp://10.0.0.126:7447/5cfe0ff1e4b0e9c7e6a3819b_2
+
