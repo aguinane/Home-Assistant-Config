@@ -54,10 +54,10 @@ device_tracker router:
 automation: !include automations.yaml
 person: !include persons.yaml
 zone: !include zones.yaml
-sensor: !include sensor.yaml
+sensor: !include sensors.yaml
 switch: !include switches.yaml
-media_player: !include media_player.yaml
-camera: !include camera.yaml
+media_player: !include media_players.yaml
+camera: !include cameras.yaml
 
 #################################################################
 ## Other
