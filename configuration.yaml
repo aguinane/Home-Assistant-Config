@@ -28,9 +28,6 @@ recorder:
 # Phone App
 ios:
 
-person: !include persons.yaml
-automation: !include automations.yaml
-
 weather:
   #  - platform: bom
   #    name: Toowoomba
@@ -51,35 +48,23 @@ device_tracker router:
     password: !secret router_pass
 
 #################################################################
-## Switches
+## Includes
 #################################################################
 
-switch:
-  - platform: broadlink
-    host: 10.0.0.111
-    mac: "34:EA:34:8E:FA:55"
-    switches:
-      tv_lg:
-        friendly_name: "LG TV"
-        command_on: "JgBoAAABJpQQFBEUETgRFBEUEBUQFBEUETgRORAVEDkROBE5EDkRORAUERQRFBA5ERQQFRAUERQROBE5EDkRFBE4ETkQORE5EAAFJQABKEkRAAxPAAEmSxEADFAAASdJEQAMUAABKEkQAA0F"
-        command_off: "JgBoAAABJpQQFBEUETgRFBEUEBUQFBEUETgRORAVEDkROBE5EDkRORAUERQRFBA5ERQQFRAUERQROBE5EDkRFBE4ETkQORE5EAAFJQABKEkRAAxPAAEmSxEADFAAASdJEQAMUAABKEkQAA0F"
+automation: !include automations.yaml
+person: !include persons.yaml
+zone: !include zones.yaml
+sensor: !include sensor.yaml
+switch: !include switches.yaml
+media_player: !include media_player.yaml
+camera: !include camera.yaml
 
-      air_con:
-        friendly_name: "Kelvinator AirCon"
-        command_on: "JgAkAQABJ5MWEhUTFBMVNxQUFBMVExUSFDgUFBMUFDgUExUTFRIVExQTFRMVExQTFBQUNxUTFBQTFBUTFBMVExU2FRMUOBQTFBQUNxQUFQACkBQTFBQUExQUFBQTFBQUFBMVExUSFRMVEhUTFRMUExQUFBMVExUSFRMVEhUTFRMUExQUFBMVExQTFDgVNxQTFDgUAAUhAAEmlBQTFBQUExU3FRIVExUTFBMUOBQTFRMVNxQTFBQUExUTFRIUFBQTFRMUFBQ3FRMUExUTFBMUFBQUFDcVNxQ4FBMVExQ3FBQUAAKRFBMVExQTFRMVEhQUFBQUExQUFBMVExQTFBQUExUTFRMUExQUFBMUFBUSFRMVEhUTFRMUExQUFBMUOBQ4FBMVNxUADQUAAAAA"
-        command_off: "JgAkAQABJ5QUExUTFRIUFBQTFRMVExQTFTcUExQUFTcUExUTFBMVExUSFBQVEhUTFRMUNhUUFBMVExUSFRMUFBQ3FBQVNhQUFRMUNxUTFAACkBUTFBQUExQUFRIVExQTFRMVEhUTFRMUExQUFBMVExUSFRMUExQUFRMUExQUFBMVExUSFRMUExUTFDgUNxUTFRIVAAUgAAEmlBQUFRIVExUSFRMVExQTFRMUNxQUFBMVNxUTFBMVExQTFBQUExUTFBQUExQ4FBMUFBUSFBQUFBQTFDgUNxQ4FBQUExU3FBMVAAKQFBQUExUTFBMVExUSFRMVEhUTFRMUExUTFRIVExUSFRMUFBQTFRMUExUTFBMVExUSFRMUFBQTFRMUNhY3FRIVExQADQUAAAAA"
+#################################################################
+## Other
+#################################################################
 
 vacuum:
   - platform: xiaomi_miio
     name: Xiaomi Vacuum
-    host: 10.0.0.127
+    host: 10.0.0.105
     token: !secret vacuum_token
-
-#################################################################
-## Includes
-#################################################################
-
-sensor: !include sensor.yaml
-media_player: !include media_player.yaml
-zone: !include zones.yaml
-camera: !include camera.yaml
