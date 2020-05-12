@@ -1,48 +1,59 @@
 - id: '1538793980800'
   alias: Run Vacuum Morning
   trigger:
-  - at: 07:05
+  - at: 06:50
     platform: time
   condition:
   - condition: zone
-    entity_id: device_tracker.alex_iphone
+    entity_id: person.alex
     zone: zone.home
-  - condition: state
-    entity_id: media_player.living_room_tv
-    state: 'off'
   action:
-  - service: vacuum.start
+  - entity_id: vacuum.xiaomi_vacuum
+    service: vacuum.start
 - id: '1538792980801'
   alias: Run Vacuum Afternoon
   trigger:
   - at: '12:30'
     platform: time
-  - at: '17:15'
+  - at: '16:30'
     platform: time
   condition:
   - condition: zone
-    entity_id: device_tracker.alex_iphone
+    entity_id: person.alex
     zone: zone.home
-  - condition: state
-    entity_id: media_player.living_room_tv
-    state: 'off'
   action:
-  - service: vacuum.start
+  - data: {}
+    entity_id: vacuum.xiaomi_vacuum
+    service: vacuum.start
 - id: '1559732747300'
   alias: Cold Morning AC
   trigger:
-  - at: 05:50
+  - at: 05:15
     platform: time
   condition:
   - condition: zone
-    entity_id: device_tracker.alex_iphone
+    entity_id: device_tracker.alex_phone
     zone: zone.home
-  - below: '5'
+  - below: '10'
     condition: numeric_state
-    entity_id: sensor.bom_feels_like_c
+    entity_id: sensor.bom_air_temp_c
   action:
   - data:
       host: 10.0.0.111
       packet:
       - JgAkAQABJ5MWEhUTFBMVNxQUFBMVExUSFDgUFBMUFDgUExUTFRIVExQTFRMVExQTFBQUNxUTFBQTFBUTFBMVExU2FRMUOBQTFBQUNxQUFQACkBQTFBQUExQUFBQTFBQUFBMVExUSFRMVEhUTFRMUExQUFBMVExUSFRMVEhUTFRMUExQUFBMVExQTFDgVNxQTFDgUAAUhAAEmlBQTFBQUExU3FRIVExUTFBMUOBQTFRMVNxQTFBQUExUTFRIUFBQTFRMUFBQ3FRMUExUTFBMUFBQUFDcVNxQ4FBMVExQ3FBQUAAKRFBMVExQTFRMVEhQUFBQUExQUFBMVExQTFBQUExUTFRMUExQUFBMUFBUSFRMVEhUTFRMUExQUFBMUOBQ4FBMVNxUADQUAAAAA
     service: broadlink.send
+- id: '1589189995402'
+  alias: Restart HA
+  description: ''
+  trigger:
+  - at: 03:05
+    platform: time
+  - at: 09:30
+    platform: time
+  - at: '16:00'
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    service: homeassistant.restart
