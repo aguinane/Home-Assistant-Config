@@ -52,7 +52,7 @@ device_tracker router:
 #################################################################
 
 automation: !include automations.yaml
-person: !include persons.yaml
+#person: !include persons.yaml
 zone: !include zones.yaml
 sensor: !include sensors.yaml
 switch: !include switches.yaml
