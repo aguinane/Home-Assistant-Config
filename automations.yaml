@@ -28,21 +28,22 @@
 - id: '1559732747300'
   alias: Cold Morning AC
   trigger:
-  - at: 05:15
+  - at: 05:20
     platform: time
   condition:
   - condition: zone
-    entity_id: device_tracker.alex_phone
+    entity_id: person.alex
     zone: zone.home
   - below: '10'
     condition: numeric_state
     entity_id: sensor.bom_air_temp_c
   action:
   - data:
-      host: 10.0.0.111
+      host: 10.0.0.101
       packet:
       - JgAkAQABJ5MWEhUTFBMVNxQUFBMVExUSFDgUFBMUFDgUExUTFRIVExQTFRMVExQTFBQUNxUTFBQTFBUTFBMVExU2FRMUOBQTFBQUNxQUFQACkBQTFBQUExQUFBQTFBQUFBMVExUSFRMVEhUTFRMUExQUFBMVExUSFRMVEhUTFRMUExQUFBMVExQTFDgVNxQTFDgUAAUhAAEmlBQTFBQUExU3FRIVExUTFBMUOBQTFRMVNxQTFBQUExUTFRIUFBQTFRMUFBQ3FRMUExUTFBMUFBQUFDcVNxQ4FBMVExQ3FBQUAAKRFBMVExQTFRMVEhQUFBQUExQUFBMVExQTFBQUExUTFRMUExQUFBMUFBUSFRMVEhUTFRMUExQUFBMUOBQ4FBMVNxUADQUAAAAA
     service: broadlink.send
+  mode: single
 - id: '1589189995402'
   alias: Restart HA
   description: ''
@@ -57,3 +58,18 @@
   action:
   - data: {}
     service: homeassistant.restart
+- id: '1589275705253'
+  alias: Turn off AC
+  description: ''
+  trigger:
+  - hours: /3
+    minutes: '0'
+    platform: time_pattern
+  condition: []
+  action:
+  - data:
+      host: 10.0.0.101
+      packet:
+      - JgAkAQABJ5QUExUTFRIUFBQTFRMVExQTFTcUExQUFTcUExUTFBMVExUSFBQVEhUTFRMUNhUUFBMVExUSFRMUFBQ3FBQVNhQUFRMUNxUTFAACkBUTFBQUExQUFRIVExQTFRMVEhUTFRMUExQUFBMVExUSFRMUExQUFRMUExQUFBMVExUSFRMUExUTFDgUNxUTFRIVAAUgAAEmlBQUFRIVExUSFRMVExQTFRMUNxQUFBMVNxUTFBMVExQTFBQUExUTFBQUExQ4FBMUFBUSFBQUFBQTFDgUNxQ4FBQUExU3FBMVAAKQFBQUExUTFBMVExUSFRMVEhUTFRMUExUTFRIVExUSFRMUFBQTFRMUExUTFBMVExUSFRMUFBQTFRMUNhY3FRIVExQADQUAAAAA
+    service: broadlink.send
+  mode: single
