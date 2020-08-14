@@ -2,5 +2,3 @@
   host: 10.0.0.102
   access_token: 712781
   name: Living Room TV
-
-- platform: denonavr

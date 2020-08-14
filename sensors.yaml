@@ -4,10 +4,10 @@
     - apparent_t
     - air_temp
     - rain_trace
-    
+
 - platform: broadlink
   host: 10.0.0.101
   mac: "34:EA:34:8E:FA:55"
   scan_interval: 60
   monitored_conditions:
-    - 'temperature'    
+    - 'temperature'

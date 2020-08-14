@@ -1,29 +1,8 @@
 homeassistant:
-  name: Home
-  latitude: !secret home_latitude
-  longitude: !secret home_longitude
-  elevation: !secret home_elevation
-  unit_system: metric
-  time_zone: Australia/Brisbane
   customize: !include customize.yaml
-
-http:
-  base_url: !secret base_url
 
 # Enables Default Home Assistant Components
 default_config:
-
-# More Config Items
-history:
-  exclude:
-    domains:
-      - automation
-      - weblink
-      - updater
-
-recorder:
-  purge_interval: 1
-  purge_keep_days: 7
 
 # Phone App
 ios:
